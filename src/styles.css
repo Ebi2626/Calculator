@@ -1,0 +1,36 @@
+body {
+  background-color: black;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  color: lightcyan;
+}
+.keyboard {
+  position: relative;
+  margin: 10px auto;
+  width: 107px;
+  display: grid;
+  grid-template-columns: 33px 33px 33px;
+  grid-template-rows: auto;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+}
+.key {
+  background-color: grey;
+  font-size: 20px;
+  width: 33px;
+  height: 33px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  transition: all 0.1s;
+}
+.key:hover {
+  box-sizing: border-box;
+  font-weight: bold;
+  background-color: lightblue;
+  border: solid 1px black;
+}
