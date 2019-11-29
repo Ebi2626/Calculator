@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Input from "./Input";
 import Keyboard from "./Keyboard";
 import Signs from "./SignsArray";
+import Rezultat from "./Rezultat";
 
 class App extends Component {
   constructor() {
@@ -26,11 +27,8 @@ class App extends Component {
       currentValuer: 2,
       value: "0"
     });
-    console.log("Pierwsza wartość:" + this.state.firstValue);
-    console.log("Znak zapisany:" + e);
   }
   countResult() {
-    console.log("Druga wartość to:" + this.state.secondValue);
     let sign = this.state.sign;
     let result;
     switch (sign) {
@@ -42,7 +40,6 @@ class App extends Component {
           firstValue: "0",
           secondValue: "0"
         });
-        console.log("Wynik dzaiałania to:" + result);
         break;
       case "-":
         result = this.state.firstValue - this.state.secondValue;
@@ -52,7 +49,6 @@ class App extends Component {
           firstValue: "0",
           secondValue: "0"
         });
-        console.log("Wynik dzaiałania to:" + result);
         break;
       case "*":
         result = this.state.firstValue * this.state.secondValue;
@@ -62,7 +58,6 @@ class App extends Component {
           firstValue: "0",
           secondValue: "0"
         });
-        console.log("Wynik dzaiałania to:" + result);
         break;
       case "/":
         result = this.state.firstValue / this.state.secondValue;
@@ -72,7 +67,6 @@ class App extends Component {
           firstValue: "0",
           secondValue: "0"
         });
-        console.log("Wynik dzaiałania to:" + result);
         break;
       case "%":
         result = this.state.firstValue % this.state.secondValue;
@@ -82,7 +76,6 @@ class App extends Component {
           firstValue: "0",
           secondValue: "0"
         });
-        console.log("Wynik dzaiałania to:" + result);
         break;
       default:
         result = "wprowadzono nieporawny znak!";
@@ -92,7 +85,6 @@ class App extends Component {
           firstValue: "0",
           secondValue: "0"
         });
-        console.log("Wynik dzaiałania to:" + result);
         break;
     }
   }
@@ -101,14 +93,12 @@ class App extends Component {
       this.setState({
         currentValuer: 2
       });
-      console.log("Current valuer is: 2");
     } else {
       this.setState({
         currentValuer: 1,
         value: "0",
         secondValue: "0"
       });
-      console.log("Current valuer is: 1");
     }
     return;
   }
@@ -146,7 +136,6 @@ class App extends Component {
       let Sign = e.target.innerHTML;
       switch (Sign) {
         case ".":
-          console.log(".");
           let Value = e.target.innerHTML;
           this.setState(prevState => {
             let x = prevState.value;
@@ -157,7 +146,6 @@ class App extends Component {
           });
           break;
         case "←":
-          console.log("←");
           break;
         case "=":
           this.countResult();
@@ -198,6 +186,7 @@ class App extends Component {
         <h1>Pierwszy reactowy kalkulator</h1>
         <Input value={this.state.value} />
         <Keyboard function={this.changeValue} />
+        <Rezultat rezultat={this.state.result} />
       </div>
     );
   }
