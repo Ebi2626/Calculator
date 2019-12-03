@@ -184,9 +184,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Pierwszy reactowy kalkulator</h1>
+        <Rezultat rezultat={this.state.result} />
         <Input value={this.state.value} />
         <Keyboard function={this.changeValue} />
-        <Rezultat rezultat={this.state.result} />
       </div>
     );
   }
