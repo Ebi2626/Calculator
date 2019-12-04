@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import Input from "./Input";
 import Keyboard from "./Keyboard";
 import Signs from "./SignsArray";
-import Rezultat from "./Rezultat";
+import Result from "./Result";
+import BackButton from "./BackButton";
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       value: "0",
       firstValue: "0",
@@ -183,8 +184,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <BackButton back={this.props.back}/>
         <h1>Pierwszy reactowy kalkulator</h1>
-        <Rezultat rezultat={this.state.result} />
+        <Result rezultat={this.state.result} />
         <Input value={this.state.value} />
         <Keyboard function={this.changeValue} />
       </div>
